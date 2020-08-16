@@ -1,0 +1,277 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "./actiontext.scss";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Caslon+Display&family=Red+Rose:wght@300;400;700&display=swap');
+$font: 'Quicksand', sans-serif;
+$font1: 'Libre Caslon Display', serif;
+
+body {
+  background-color: #e9ecef!important;
+}
+
+.title-img {
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+#navbar {
+  .path {
+    color: black !important;
+  }
+
+  .nav-link {
+    font-family: $font;
+  }
+}
+
+
+
+.navbar-light .navbar-toggler {
+  color: rgba(0, 0, 0, 0) !important;
+  border-color: rgb(0, 0, 0) !important;
+}
+
+.img-wrapper {
+  display: grid;
+}
+
+.image-bottom {
+  border-radius: 5px;
+  display: flex;
+  grid-column: 2 / span 3;
+  grid-row: 4 / span 2;
+  z-index: 1;
+  border: 1px solid black;
+}
+
+.image-top {
+  z-index: 2;
+  display: flex;
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 4;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+#main-container {
+  background: transparent linear-gradient(to right, #ffffff, #fff) !important;
+  padding-bottom: 20px!important;
+}
+
+.wrapper {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+
+  // Using inset box-shadow instead of border for sizing simplicity
+  box-shadow: inset 0 0 0 2px #e50c51;
+  color: #e50c51;
+  font-size: inherit;
+  font-weight: 700;
+
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.draw {
+  transition: color 0.25s;
+
+  &::before,
+  &::after {
+    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  // This covers the top & right borders (expands right, then down)
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  // And this the bottom & left borders (expands left, then up)
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    color: #e50c51;
+  }
+
+  // Hover styles
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: #e50c51; // Make borders visible
+    border-right-color: #e50c51;
+    transition:
+            width 0.25s ease-out, // Width expands first
+            height 0.25s ease-out 0.25s; // And then height
+  }
+
+  &:hover::after {
+    border-bottom-color: #e50c51; // Make borders visible
+    border-left-color: #e50c51;
+    transition:
+            border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
+            width 0.25s ease-out 0.5s, // And then exanding width
+            height 0.25s ease-out 0.75s; // And finally height
+  }
+}
+
+.navbar-nav {
+  li {
+    padding: 0 10px;
+
+  }
+
+  li a:before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    right: 100%;
+    bottom: 10%;
+    background: #d60f54; /*** COLOR OF THE LINE ***/
+    height: 3px; /*** THICKNESS OF THE LINE ***/
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+
+  li a:hover {
+    opacity: 1 !important;
+  }
+
+  li a:hover:before {
+    right: 0;
+  }
+
+  li li a:before {
+    bottom: 10%;
+  }
+}
+
+.navbar-nav li a {
+  color: black !important;
+  transition: 0.2s;
+  &:hover {
+    //border-color: white;
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+}
+
+#about-me {
+
+  h1 {
+    font-family: $font1;
+    font-size: 2.5rem
+  }
+  p {
+    font-family: $font1;
+    font-weight: 400;
+    font-size: 1.3em;
+  }
+
+  .button {
+    text-decoration: none;
+    transition: 0.2s;
+    font-family: $font1;
+    font-weight: 400;
+    float: right;
+    border: 1px transparent;
+
+    &:hover {
+      border-bottom: 5px solid #e50c51;
+    }
+  }
+}
+
+#about-me-full {
+  h3 {
+    font-family: $font1;
+  }
+
+  p {
+    font-family: $font1;
+    font-weight: 400;
+    font-size: 1.1em;
+  }
+
+  .text-wrap {
+    margin-left: 1.25rem;
+    margin-bottom: 1.25rem;
+    margin-right: 1.25rem;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px rgba(129, 129, 129, 0.82);
+  }
+}
+
+#show-page-jumbo {
+  width: 100%;
+}
+
+#post-show {
+
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar-nav li a {
+    color: black !important;
+    transition: 0.2s;
+    &:hover {
+      //border-color: white;
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar-nav li a {
+    color: black !important;
+    transition: 0.2s;
+    &:hover {
+      //border-color: white;
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  }
+}
+

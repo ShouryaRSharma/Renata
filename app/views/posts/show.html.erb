@@ -1,0 +1,21 @@
+<div style="width: 100%; height: 300px; overflow-y: hidden">
+  <%= image_tag(@post.banner, style: "width: 100%") %>
+</div>
+<div class="container" id="post-show">
+  <div class="row">
+    <div class="jumbotron jumbotron-fluid mt-3" id="show-page-jumbo">
+      <div class="container">
+        <h1 class="display-4">
+          <%= link_to @post.title, posts_path %>
+        </h1>
+        <p class="lead">
+          Last edited at <%= @post.updated_at.strftime("%k:%M, %e %B %Y") %> by <%= @post.user.username %> | <%= pluralize(@post.views, "View") %>
+        </p>
+        <hr class="mt-4">
+        <div class="post_body">
+          <%= @post.body %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <%= will_paginate @posts, :container => false,  renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
+  </div>
+  <% @posts.each do |post| %>
+  <div class="row">
+    <div class="card mb-3">
+      <img class="card-img-top" src="<%= url_for post.optimized_image(post.thumbnail, 586, 180) %>" alt="post-image-thumbnail">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to post.title, post%></h5>
+        <p class="card-text"><%= post.body.to_plain_text.truncate_words(25) %></p>
+        <p class="card-text">
+          <small class="text-muted"><%= post.updated_at.strftime("%k:%M, %e %B %Y") %> by <%= post.user.username %> | <%= pluralize(post.views, "View") %></small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

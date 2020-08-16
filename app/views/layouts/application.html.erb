@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LifeWithRenata</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application'%>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid" id="main-container">
+      <div class="container">
+          <div class="text-center">
+            <%= link_to image_tag("title-image.png", class: "img-fluid title-img"), root_path %>
+          </div>
+        <%= render("layouts/header") %>
+    <%= yield %>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
