@@ -22,12 +22,5 @@ import "@fortawesome/fontawesome-free/js/all";
 global.$ = jQuery;
 require("trix")
 require("@rails/actiontext")
-import 'smooth-scroll/dist/smooth-scroll.js'
+require("smooth-scroll/dist/smooth-scroll.js")
 
-var scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 500,
-    speedAsDuration: true,
-    easing: 'easeInOutCubic',
-    updateURL: true,
-    popstate: true,
-});

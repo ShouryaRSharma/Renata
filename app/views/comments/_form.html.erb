@@ -1,0 +1,31 @@
+<% if current_user %>
+  <div class="row">
+    <div class="col">
+      <%= form_with model: [commentable, local] do |f| %>
+        <div class="form-group">
+          <%= f.rich_text_area :body, placeholder: "Say something...", class:"reply-form-#{commentable.id}", id: f.object.object_id, method: :patch %>
+          <%= f.submit "Post", class:'btn btn-dark float-right' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <script>
+      $(document).on("turbolinks:load", function() {
+          $(".trix-button-group--file-tools").remove();
+          document.addEventListener("trix-file-accept", function(event) {
+              event.preventDefault();
+          });
+      });
+  </script>
+
+<% else %>
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <h2 class="comment-login-prompt"><%= link_to "Login", new_user_session_path %> to comment</h2>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+<% end %>

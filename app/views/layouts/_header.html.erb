@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-light px-0" id="navbar">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -6,14 +8,23 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mx-auto align-center" id="top-menu">
+    <% if controller_name == "pages" && action_name = "home" %>
       <li class="nav-item">
-        <a class="nav-link" href="/#about-me">ABOUT ME</a>
+        <a data-scroll class="nav-link" href="/#intro">RENATA</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">MARKETS</a>
+        <a data-scroll class="nav-link" href="#about-me">ABOUT ME</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">OIL</a>
+      </li>
+      <% else %>
+      <li class="nav-item">
+          <%= link_to "ABOUT ME", root_path, class: "nav-link"%>
+        </li>
+    <% end %>
+      <li class="nav-item">
+        <%= link_to "POSTS", posts_path, class: "nav-link"%>
       </li>
       <% unless current_user %>
       <li class="nav-item">

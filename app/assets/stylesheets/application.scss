@@ -16,9 +16,11 @@
 
 @import "./actiontext.scss";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Caslon+Display&family=Red+Rose:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Caslon+Display&family=Playfair+Display:wght@400;500;600&family=Red+Rose:wght@300;400;700&display=swap');
 $font: 'Quicksand', sans-serif;
 $font1: 'Libre Caslon Display', serif;
+$font2: 'Red Rose', cursive;
+$font3: 'Playfair Display', serif;
 
 body {
   background-color: #e9ecef!important;
@@ -32,7 +34,7 @@ body {
 }
 
 #navbar {
-  .path {
+  path {
     color: black !important;
   }
 
@@ -71,8 +73,12 @@ body {
 }
 
 #main-container {
+  min-height: 100vh
+}
+
+#main-jumbo {
   background: transparent linear-gradient(to right, #ffffff, #fff) !important;
-  padding-bottom: 20px!important;
+  min-height: 100vh;
 }
 
 .wrapper {
@@ -199,7 +205,7 @@ body {
   }
 }
 
-#about-me {
+#intro {
 
   h1 {
     font-family: $font1;
@@ -222,6 +228,16 @@ body {
     &:hover {
       border-bottom: 5px solid #e50c51;
     }
+  }
+
+  .lead {
+    font-weight: 100;
+  }
+}
+
+#about-me {
+  .lead {
+    //float: right;
   }
 }
 
@@ -247,13 +263,201 @@ body {
 
 #show-page-jumbo {
   width: 100%;
+  margin-bottom: 0!important;
+}
+
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: black!important;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: 0.3s;
+  &:hover {
+    z-index: 3;
+    color: #fff!important;
+    background-color: #e50c51!important;
+  }
+}
+
+#post-index {
+  .post-link {
+    text-decoration: none;
+    transition: 0.3s;
+    color: black;
+    border: 5px transparent;
+    border-radius: 5px;
+    font-family: $font3;
+    font-size: 2rem;
+    &:hover {
+      text-decoration: none;
+      color: black;
+      border-bottom: 4px solid #e50c51;
+    }
+  }
+
+  .card {
+    .img-box {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      .card-img-top {
+        display: block; /* no whitespace */
+        transition: .3s ease-in-out;
+      }
+    }
+    &:hover {
+      .card-img-top {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+
+  .image {
+    object-fit: cover;
+  }
+
+  p {
+    font-family: $font1;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  .delete-link {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #6c757d;
+    border: 5px transparent;
+    border-radius: 5px;
+    font-family: $font3;
+    &:hover {
+      text-decoration: none;
+      color: black;
+      border-bottom: 4px solid #e50c51;
+    }
+  }
 }
 
 #post-show {
+  .card-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow-y: hidden
+  }
+
+  .post-link {
+    text-decoration: none;
+    transition: 0.3s;
+    color: black;
+    border: 5px transparent;
+    border-radius: 5px;
+    font-family: $font3;
+    &:hover {
+      text-decoration: none;
+      color: black;
+      border-bottom: 4px solid #e50c51;
+    }
+  }
+
+  .image {
+    object-fit: cover;
+  }
+
+  .post_body {
+    font-family: $font1;
+    font-weight: 500;
+  }
+}
+
+
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff!important;
+  background-color: #e50c51!important;
+  border-color: #e50c51!important;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d !important;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+
+.comment-container {
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  margin: 1em;
+  padding-bottom: 1em;
+}
+
+.inner-comment-container {
+  margin: 1em;
+  padding-bottom: 1em;
+}
+
+.comment-avatar {
+  border-radius: 50%;
+  margin: 0.5em;
+  max-width: 100%;
+  max-height: 100%;
+  clip-path: circle(4em at center);
+  font-family: $font3;
+}
+
+.comment-timestamp {
+  font-size: 16px;
+  color: rgb(25, 25, 25);
+  width: 100%;
+  font-family: $font3;
 
 }
 
-@media only screen and (max-width: 900px) {
+.comment-username {
+  font-size: 1.5em;
+  color: rgb(25,25,25);
+  font-weight: 600;
+  font-family: $font3;
+}
+
+.comment-number {
+  font-size: 1.5em;
+  color: rgb(25,25,25);
+  font-weight: 300;
+  font-family: $font3;
+}
+
+.comment-body {
+  text-align: justify;
+}
+
+.comment-form {
+  max-width: 100%;
+}
+
+trix-toolbar .trix-button-row {
+  flex-wrap: wrap;
+}
+
+.comment-form-nested {
+  margin-right: 2em;
+}
+
+.trix-content {
+  font-family: $font1;
+}
+
+@media only screen and (max-width: 1000px) {
   .navbar-nav li a {
     color: black !important;
     transition: 0.2s;
