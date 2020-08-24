@@ -8,27 +8,20 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mx-auto align-center" id="top-menu">
-    <% if controller_name == "pages" && action_name = "home" %>
       <li class="nav-item">
-        <a data-scroll class="nav-link" href="/#intro">RENATA</a>
+        <%= link_to "ABOUT ME", root_path, class: "nav-link"%>
       </li>
-      <li class="nav-item">
-        <a data-scroll class="nav-link" href="#about-me">ABOUT ME</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">OIL</a>
-      </li>
-      <% else %>
-      <li class="nav-item">
-          <%= link_to "ABOUT ME", root_path, class: "nav-link"%>
-        </li>
-    <% end %>
       <li class="nav-item">
         <%= link_to "POSTS", posts_path, class: "nav-link"%>
       </li>
       <% unless current_user %>
       <li class="nav-item">
         <%= link_to "SIGN IN", new_user_session_path, class: "nav-link"%>
+      </li>
+      <% end %>
+      <% if current_user && current_user.admin %>
+      <li class="nav-item">
+        <%= link_to "NEW POST", new_post_path, class: "nav-link" %>
       </li>
       <% end %>
     </ul>
