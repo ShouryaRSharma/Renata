@@ -236,8 +236,57 @@ body {
 }
 
 #about-me {
+  h1 {
+    font-family: $font1;
+    font-size: 2.5rem
+  }
+  p {
+    font-family: $font1;
+    font-weight: 400;
+    font-size: 1.3em;
+    max-width: 35ch;
+  }
+
+  .button {
+    text-decoration: none;
+    transition: 0.2s;
+    font-family: $font1;
+    font-weight: 400;
+    float: right;
+    border: 1px transparent;
+
+    &:hover {
+      border-bottom: 5px solid #e50c51;
+    }
+  }
+
   .lead {
-    //float: right;
+    font-weight: 100;
+  }
+
+  .image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+
+  .image-bottom {
+    border-radius: 5px;
+    display: flex;
+    grid-column: 2 / span 3;
+    grid-row: 5 / span 1;
+    z-index: 1;
+    border: 1px solid black;
+  }
+
+  .image-top {
+    z-index: 2;
+    display: flex;
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 4;
+    border-radius: 5px;
+    border: 1px solid black;
   }
 }
 
@@ -376,7 +425,41 @@ body {
   }
 }
 
+#posts {
+  .post-link {
+    text-decoration: none;
+    transition: 0.3s;
+    color: black;
+    justify-content: center;
+    border: 5px transparent;
+    border-radius: 5px;
+    font-family: $font1;
+    font-size: 1rem;
+    &:hover {
+      text-decoration: none;
+      color: black;
+      border-bottom: 4px solid #e50c51;
+    }
+  }
 
+  h1 {
+    font-family: $font1;
+    font-size: 2.5rem
+  }
+
+  .button {
+    text-decoration: none;
+    transition: 0.2s;
+    font-family: $font1;
+    font-weight: 400;
+    border: 1px transparent;
+    border-bottom: 5px;
+
+    &:hover {
+      border-bottom: 5px solid #e50c51;
+    }
+  }
+}
 
 .page-item.active .page-link {
   z-index: 3;
@@ -455,6 +538,17 @@ trix-toolbar .trix-button-row {
 
 .trix-content {
   font-family: $font1;
+}
+
+.slick-prev::before, .slick-next::before {
+
+  color: #020000 !important;
+  opacity: 0.75;
+
+}
+
+.slick-slide {
+  padding: 5px;
 }
 
 @media only screen and (max-width: 1000px) {

@@ -16,11 +16,48 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap'
-import './src/application.scss';
 import "@fortawesome/fontawesome-free/js/all";
+import "slick-carousel/slick/slick.scss"
+import "slick-carousel/slick/slick-theme.scss"
+import './src/application.scss';
+
 
 global.$ = jQuery;
 require("trix")
 require("@rails/actiontext")
 require("smooth-scroll/dist/smooth-scroll.js")
+require("slick-carousel/slick/slick.js")
 
+document.addEventListener("turbolinks:load", function() {
+    $(".scroller").slick({
+
+        // normal options...
+        infinite: true,
+
+        // the magic
+        responsive: [{
+
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true
+            }
+
+        }, {
+
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                dots: true
+            }
+
+        }, {
+
+            breakpoint: 300,
+            settings: "unslick" // destroys slick
+
+        }]
+    });
+})

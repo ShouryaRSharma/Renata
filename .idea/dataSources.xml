@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails LifeWithRenata: development" uuid="db4ef3f8-91f3-44bc-bd1f-64f857ce5c42">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Chillblast PC\Documents\Web Content\lifeWithRenata\db\development.sqlite3</jdbc-url>
+    </data-source>
+  </component>
+</project>
