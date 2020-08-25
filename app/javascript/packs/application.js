@@ -23,11 +23,11 @@ import "slick-carousel/slick/slick-theme.scss";
 import '@fortawesome/fontawesome-free/js/brands';
 
 global.$ = jQuery;
-require("trix")
+
 require("@rails/actiontext")
 require("smooth-scroll/dist/smooth-scroll.js")
 require("slick-carousel/slick/slick.js")
-
+require("trix")
 document.addEventListener("turbolinks:load", function() {
     $(".scroller").slick({
 
