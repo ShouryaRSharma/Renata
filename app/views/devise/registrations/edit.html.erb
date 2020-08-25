@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-sm-4">
           <% if resource.avatar.attached? %>
-          <%= image_tag resource.avatar.variant(resize: "250x250!"), class: "rounded-circle" %>
+          <%= url_for(resource.avatar, width: 250, height: 250, class: "rounded-circle") %>
           <%else %>
           <%= image_tag("/default_profile.png", class: "rounded-circle", height: 250, width: 250) %>
           <% end %>

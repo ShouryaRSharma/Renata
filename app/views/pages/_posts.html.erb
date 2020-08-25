@@ -11,7 +11,7 @@
         <div class="scroller" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
           <% @posts.each do |post| %>
             <figure class="figure h-100 bg-white">
-              <%= link_to image_tag(post.banner, class:"figure-img image rounded border border-dark", style: "object-fit: cover"), post %>
+              <%= link_to url_for(post.banner, class:"figure-img image rounded border border-dark", style: "object-fit: cover"), post %>
               <figcaption class="figure-caption text-center"><%= link_to post.title, post, class: "post-link" %></figcaption>
             </figure>
           <% end %>

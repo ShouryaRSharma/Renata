@@ -7,11 +7,11 @@
     </div>
     <div class="form-group">
       <%= f.label :thumbnail, class: 'form-control' %>
-      <%= f.file_field :thumbnail %>
+      <%= f.file_field :thumbnail, direct_upload: true %>
     </div>
     <div class="form-group">
       <%= f.label :banner, class: 'form-control' %>
-      <%= f.file_field :banner %>
+      <%= f.file_field :banner, direct_upload: true %>
     </div>
     <div class="form-group">
       <%= f.rich_text_area :body, placeholder: "Type Blog stuff here" %>

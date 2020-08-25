@@ -7,7 +7,7 @@
     <a href="/posts/<%= post.friendly_id %>">
     <div class="card mb-3">
       <div class="img-box">
-      <%= image_tag(post.thumbnail, class: "card-img-top image", alt: "post-image-thumbnail", width: "100vh", style: "width: 100%") %>
+      <%= url_for(post.thumbnail, class: "card-img-top image", alt: "post-image-thumbnail", width: "100vh", style: "width: 100%") %>
       </div>
 
       <div class="card-body">

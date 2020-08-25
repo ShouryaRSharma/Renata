@@ -31,6 +31,7 @@ gem 'faker'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 gem 'friendly_id'
+gem 'cloudinary'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

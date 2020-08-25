@@ -765,6 +765,28 @@ trix-toolbar .trix-button-row {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  #about-me-full {
+    h3 {
+      font-family: $font1;
+    }
+
+    p {
+      font-family: $font1;
+      font-weight: 400;
+      font-size: 1.1em;
+    }
+
+    .text-wrap {
+      margin-left: 1.25rem;
+      margin-bottom: 1.25rem;
+      margin-right: 0;
+      border-radius: 5px;
+      box-shadow: 2px 3px 5px rgba(129, 129, 129, 0.82);
+    }
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .navbar-nav li a {
     color: black !important;

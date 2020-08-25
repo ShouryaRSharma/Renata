@@ -2,7 +2,7 @@
   <div class="col-md-3">
     <div class="row">
       <% if comment.user.avatar.attached? %>
-        <%= image_tag(comment.user.avatar, class:'comment-avatar') %>
+        <%= url_for(comment.user.avatar, class:'comment-avatar') %>
       <% else %>
         <%= image_tag("/default_profile.png", class:'comment-avatar') %>
       <% end %>
