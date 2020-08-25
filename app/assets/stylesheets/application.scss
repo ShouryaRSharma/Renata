@@ -15,6 +15,9 @@
  */
 
 @import "./actiontext.scss";
+@import "bootstrap/scss/bootstrap";
+@import '@fortawesome/fontawesome-free/all.css';
+@import "slick-carousel/slick/slick.scss";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Caslon+Display&family=Playfair+Display:wght@400;500;600&family=Red+Rose:wght@300;400;700&display=swap');
 $font: 'Quicksand', sans-serif;
