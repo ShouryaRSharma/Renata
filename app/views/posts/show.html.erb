@@ -2,7 +2,7 @@
 <div class="container" id="post-show">
   <div class="row">
     <div class="card-image" style="width: 100%; height: auto; overflow-y: hidden">
-      <%= url_for(@post.banner, style: "object-fit: cover; width: 100%", class: "card-img-top") %>
+      <%= image_tag(url_for(@post.banner), style: "object-fit: cover; width: 100%", class: "card-img-top") %>
     </div>
     <div class="jumbotron jumbotron-fluid" id="show-page-jumbo">
       <div class="container">
