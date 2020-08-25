@@ -16,10 +16,10 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+import './src/application.scss';
 import "@fortawesome/fontawesome-free/js/all";
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
-import './src/application.scss';
 import '@fortawesome/fontawesome-free/js/brands';
 
 global.$ = jQuery;
