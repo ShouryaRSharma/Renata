@@ -6,16 +6,24 @@
     </div>
     <div class="jumbotron jumbotron-fluid" id="show-page-jumbo">
       <div class="container">
-        <h1 class="display-4">
-          <%= @post.title %>
-        </h1>
-        <p class="lead">
-          Last edited at <%= @post.updated_at.strftime("%k:%M, %e %B %Y") %> by <%= @post.user.username %> | <%= pluralize(@post.views, "View") %>
-        </p>
-        <hr class="mt-4">
-        <div class="post_body">
-          <%= @post.body %>
+        <div class="row">
+          <div class="col-md">
+            <h1 class="display-4">
+              <%= @post.title %>
+            </h1>
+            <p class="lead">
+              Last edited at <%= @post.updated_at.strftime("%k:%M, %e %B %Y") %> by <%= @post.user.username %> | <%= pluralize(@post.views, "View") %> |
+              <% if current_user && current_user.admin %>
+                <%= link_to "Edit", edit_post_path, class: "edit-link" %>
+              <% end %>
+            </p>
+            <hr class="mt-4">
+            <div class="post_body">
+              <%= @post.body %>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>

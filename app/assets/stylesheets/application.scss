@@ -569,7 +569,6 @@ $social-button-colors: (
   .card-image {
     width: 100%;
     height: auto;
-    max-height: 300px;
     overflow-y: hidden
   }
 
@@ -587,16 +586,46 @@ $social-button-colors: (
     }
   }
 
+  .edit-link {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #6c757d;
+    border: 5px transparent;
+    border-radius: 5px;
+    &:hover {
+      text-decoration: none;
+      color: black;
+      border-bottom: 4px solid #e50c51;
+    }
+  }
+
   .image {
     object-fit: cover;
   }
 
   .post_body {
+    display: flex;
     font-family: $font1;
     font-weight: 500;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
   }
 }
 
+.display-4 {
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
 #posts {
   .post-link {
     text-decoration: none;
@@ -710,6 +739,7 @@ trix-toolbar .trix-button-row {
 
 .trix-content {
   font-family: $font1;
+
 }
 
 .slick-prev::before, .slick-next::before {
